@@ -97,7 +97,6 @@ p {
 .badge--secondary {
   background: var(--color-secondary);
 }
-
 .badge--small {
   font-size: 1.6rem;
 }
@@ -109,5 +108,32 @@ p {
   }
   .badge--small {
     font-size: 1.2rem;
+  }
+}
+
+/* LISTS */
+.list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
+}
+/* FIXME: WHY ARE WE USING THE .list--inline CLASS HERE? */
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+}
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* DESKTOP-LISTS */
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
   }
 }
