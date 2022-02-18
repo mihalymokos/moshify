@@ -39,7 +39,6 @@ h3 {
 p {
   margin-top: 0;
 }
-
 /* DESKTOP-TYPOGRAPHY */
 @media screen and (min-width: 1024px) {
   body {
@@ -79,5 +78,36 @@ p {
 @media screen and (min-width: 1024px) {
   .link-arrow {
     font-size: 1.5rem;
+  }
+}
+
+/* BADGES */
+.badge {
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.badge--primary {
+  background: var(--color-primary);
+}
+.badge--secondary {
+  background: var(--color-secondary);
+}
+
+.badge--small {
+  font-size: 1.6rem;
+}
+
+/* DESKTOP-BADGES */
+@media screen and (min-width: 1024px) {
+  .badge {
+    font-size: 1.5rem;
+  }
+  .badge--small {
+    font-size: 1.2rem;
   }
 }
