@@ -148,9 +148,18 @@ p {
   width: 40px;
   height: 40px;
 }
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
 .icon--primary {
   fill: var(--color-primary);
 }
+.icon--white {
+  fill: white;
+}
+
 /* FIXME: WE DONT NEED TO USE THE BEM NAMING CONVENTION
 BECAUSE THIS IS A COMPLETELY NEW CLASS */
 .icon-container {
@@ -161,6 +170,10 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-container--accent {
+  background-color: var(--color-accent);
 }
 
 /* BUTTONS */
@@ -387,15 +400,43 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
   display: grid;
 }
 
-/* TABLET-QUOTES */
+/* TABLET-GRIDS */
 @media screen and (min-width: 768px) {
   .grid--cols-2 {
     grid-template-columns: 1fr 1fr;
   }
 }
-/* DESKTOP-QUOTES */
+/* DESKTOP-GRIDS */
 @media screen and (min-width: 1024px) {
   .grid--cols-3 {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* TESTIMONIALS */
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+}
+.testimonial__image > img {
+  width: 100%;
+}
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  right: -30px;
+}
+/* TABLET-TESTIMONIAL */
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+  .testimonial .quote {
+    margin-left: 6rem;
   }
 }
