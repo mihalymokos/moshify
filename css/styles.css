@@ -33,6 +33,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -120,13 +121,13 @@ p {
 /* LISTS */
 .list {
   list-style: none;
-  padding-left: 0;
+  padding-left: 3rem;
   color: var(--color-headings);
 }
 /* FIXME: WHY ARE WE USING THE .list--inline CLASS HERE? */
 .list--inline .list__item {
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 3rem;
 }
 .list--tick {
   list-style-image: url(../images/tick.svg);
@@ -184,12 +185,20 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
+  outline: 0;
   padding: 2rem 3rem;
   text-align: center;
   text-decoration: 0;
   text-transform: uppercase;
   white-space: nowrap;
 }
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
@@ -260,7 +269,7 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 .input-group .btn {
   margin: 4px;
@@ -291,8 +300,17 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
   background: var(--color-secondary);
   color: #fff;
 }
+.card--primary .badge--primary {
+  background: #126de4;
+}
+.card--secondary .badge--secondary {
+  background: #02cdf1;
+}
 
 /* PLANS */
+.plan {
+  transition: 0.2s ease-out;
+}
 .plan__name {
   color: #fff;
   margin: 0;
@@ -317,6 +335,10 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
 .plan .list__item {
   margin-bottom: 2rem;
 }
+
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
 }
@@ -327,6 +349,12 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
   position: absolute;
   top: -6px;
   right: 5%;
+}
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 /* DESKTOP-CARDS */
 @media screen and (min-width: 1024px) {
@@ -601,5 +629,85 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
 
   .nav__item {
     border: 0;
+  }
+}
+
+/* HERO */
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+/* TABLET-HERO */
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 0;
+  }
+  .hero__content {
+    text-align: left;
+    align-self: center;
+  }
+}
+
+/* DOMAIN BLOCK */
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 740px;
+  margin: 0 auto;
+}
+/* TABLET-DOMAIN BLOCK */
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+
+/* PLANS BLOCK */
+.plans-block .grid {
+  gap: 8rem 4rem;
+}
+.plans-block .card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* FEATURES */
+.feature {
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+}
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+
+.feature__heading {
+  margin: 1rem 0;
+}
+.feature__image {
+  width: 100%;
+}
+/* TABLET-FEATURES */
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
   }
 }
