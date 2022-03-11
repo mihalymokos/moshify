@@ -291,7 +291,9 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
 .card__body {
   padding: 2rem 3rem;
 }
-
+.card__body .list {
+  color: var(--color-headings);
+}
 .card--primary .card__header {
   background: var(--color-primary);
   color: #fff;
@@ -359,7 +361,7 @@ BECAUSE THIS IS A COMPLETELY NEW CLASS */
 /* DESKTOP-CARDS */
 @media screen and (min-width: 1024px) {
   .plan__name {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   .plan__price {
     font-size: 5rem;
